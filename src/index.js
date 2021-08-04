@@ -7,11 +7,29 @@ const imageData = [
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg' },
 ]
 
+function makeImage ({ imageURL }){ //object destructring
+  const image = document.createElement('img');
+  image.src = imageURL;
+  image.style.height = '10em';
+  //image.style.width = '10em';
+  return image;
+}
 
+imageData.forEach((img) => {
+  const imgElem = makeImage(img);
+  document.body.prepend(imgElem);
+})
 // TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
 //  Destructure `open` and `close` from the constants
+
+import panelData from './data/panelData.js';
+import constants from './data/constants.js';
+import linkData from './data/linkData.js';
+
+
+
 
 
 // TASK 2- Verify our imports using log statements
